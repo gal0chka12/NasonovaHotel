@@ -1,0 +1,27 @@
+﻿<Window x:Class="NasonovaHotel.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NasonovaHotel"
+        mc:Ignorable="d"
+        Title="Панель администратора" Height="450" Width="800">
+    <Grid>
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="21,25,25,26" SelectionChanged="DataGrid-SelectionChanged"/>
+        <DataGrid x:Name="dataGrid" Margin="21,25,25,26" AutoGenerateColumns="False" SelectionChanged="DataGrid-SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding LastName}" />
+                <DataGridTextColumn Header="Имя" Binding="{Binding FirstName}" />
+                <DataGridTextColumn Header="Роль" Binding="{Binding Role}" />
+                <DataGridTextColumn Header="Логин" Binding="{Binding Login}" />
+                <DataGridCheckBoxColumn Header="Заблокирован" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Content="Добавить пользователя" Width="172" Background="#FA8072" Foreground="#FFFFFF" FontWeight="Bold" HorizontalAlignment="Left" Cursor="Hand" Margin="55,348,0,46" BorderThickness="0" Click="BtnLoginClick"/>
+        <Button Content="Разблокировать" Width="172" Background="#FA8072" Foreground="#FFFFFF" FontWeight="Bold" HorizontalAlignment="Left" Cursor="Hand" Margin="312,348,0,46" BorderThickness="0" Click="BtnLoginClick"/>
+        <Button Content="Сохранить изменения" Width="172" Background="#FA8072" Foreground="#FFFFFF" FontWeight="Bold" HorizontalAlignment="Left" Cursor="Hand" Margin="564,348,0,46" BorderThickness="0" Click="BtnLoginClick"/>
+    </Grid>
+
+</Window>
+
